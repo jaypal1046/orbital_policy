@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbital - Privacy Policy & Terms of Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #0a0c14;
+            --bg-card: #121624;
+            --bg-card-hover: #181d30;
+            --border: #232840;
+            --primary: #7c3aed;
+            --primary-light: #a78bfa;
+            --cyan: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-sub: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .logo-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 10px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: var(--primary-light);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+        }
+
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px 32px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin: 28px 0 14px;
+            border-left: 4px solid var(--primary-light);
+            padding-left: 12px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--cyan);
+            margin: 20px 0 10px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        ul {
+            color: var(--text-muted);
+            padding-left: 24px;
+            margin-bottom: 18px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        .meta-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--cyan);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-title">Orbital AI Companion</div>
+            <div class="subtitle">Legal Documentation & User Trust Center</div>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('privacy')">Privacy Policy</button>
+                <button class="tab-btn" onclick="showTab('terms')">Terms of Service</button>
+            </div>
+        </header>
+
+        <!-- PRIVACY POLICY TAB -->
+        <div id="privacy-tab" class="content-card">
+            <span class="meta-badge">Last Updated: September 29, 2026</span>
+            <h2>Privacy Policy</h2>
+            <p>Welcome to <strong>Orbital</strong> ("we", "our", or "the App"). We are firmly committed to protecting your privacy and providing a secure, transparent, and private client-side AI companion experience. This Privacy Policy outlines what information the App interacts with, how it is stored, and your rights.</p>
+
+            <h2>1. Zero Data Collection Architecture</h2>
+            <p><strong>Orbital does not operate external user-tracking servers, does not collect personal identity information, and does not sell or monetize user data.</strong></p>
+            <ul>
+                <li><strong>Local Device Storage:</strong> All chat sessions, custom provider configurations, and preferences are stored exclusively on your device's private SQLite (Room) database and encrypted preferences.</li>
+                <li><strong>Encrypted API Keys:</strong> API keys you supply (e.g., Google AI Studio, Groq, OpenAI, Cerebras, Anthropic) are protected on-device using Android's <code>EncryptedSharedPreferences</code> backed by Android Keystore hardware security.</li>
+                <li><strong>No Telemetry & No Advertising:</strong> Orbital contains zero third-party ads, zero tracking SDKs, and zero commercial analytics monitors.</li>
+            </ul>
+
+            <h2>2. Device Permissions and Usage</h2>
+            <p>Orbital requests specific Android permissions strictly to provide features requested directly by the user:</p>
+            <ul>
+                <li><strong>Microphone (Audio Recording):</strong> Used only when you tap the voice button or engage in voice conversation with your chosen companion mascot. Audio streams are processed in real time for speech recognition and are never stored or uploaded to secondary servers.</li>
+                <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW):</strong> Used solely to display the floating interactive avatar mascot and floating HUD chat bubble over other apps when you choose to float your companion.</li>
+                <li><strong>Foreground Service:</strong> Used to maintain the lightweight interactive floating mascot companion and execute user-scheduled background monitoring notifications via Android's WorkManager.</li>
+                <li><strong>Network Access:</strong> Used exclusively to communicate directly between your device and the AI model API provider you have configured (such as Gemini, Groq, Cerebras, or OpenAI).</li>
+            </ul>
+
+            <h2>3. Third-Party AI Model Providers</h2>
+            <p>When you send prompts to Orbital, the text is transmitted directly via secure HTTPS to the AI provider endpoint you have selected or configured. Each provider operates under its respective privacy terms:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AI Studio Privacy Policy</a></li>
+                <li><a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">Groq Privacy Policy</a></li>
+                <li><a href="https://openai.com/privacy" target="_blank" rel="noopener">OpenAI Privacy Policy</a></li>
+            </ul>
+
+            <h2>4. Data Retention & User Control</h2>
+            <p>You have full, sovereign control over your data at all times:</p>
+            <ul>
+                <li><strong>Delete Chats:</strong> You can delete any chat conversation or start a fresh session at any time within the App.</li>
+                <li><strong>Remove API Keys:</strong> You can clear, toggle, or replace your API keys whenever you wish.</li>
+                <li><strong>Complete Purge:</strong> Clearing App Data in Android System Settings or uninstalling the App permanently deletes all stored databases and keys from your phone.</li>
+            </ul>
+
+            <h2>5. Contact & Support</h2>
+            <p>If you have questions or feedback regarding this Privacy Policy, you can open an issue on GitHub or reach out to:</p>
+            <p><strong>Developer:</strong> Jayprakash Pal<br>
+            <strong>GitHub Repository:</strong> <a href="https://github.com/jaypal1046/orbital_policy" target="_blank" rel="noopener">github.com/jaypal1046/orbital_policy</a></p>
+        </div>
+
+        <!-- TERMS OF SERVICE TAB -->
+        <div id="terms-tab" class="content-card hidden">
+            <span class="meta-badge">Last Updated: September 29, 2026</span>
+            <h2>Terms of Service</h2>
+            <p>By downloading, installing, or using the <strong>Orbital</strong> Android application ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.</p>
+
+            <h2>1. Use of the App</h2>
+            <p>Orbital is provided as a personal productivity AI companion and automation client. You agree to use the App in accordance with all applicable local, national, and international laws.</p>
+            <ul>
+                <li>You are responsible for obtaining and maintaining valid API keys for any third-party providers you configure.</li>
+                <li>You agree not to use the App to generate malicious content, execute harmful system commands, or violate provider acceptable use policies.</li>
+            </ul>
+
+            <h2>2. Disclaimer of Warranties & AI Responses</h2>
+            <p>Orbital is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind. AI models are probabilistic systems and may generate inaccurate, incomplete, or out-of-date information. Users must verify all critical outcomes before acting upon AI recommendations.</p>
+
+            <h2>3. Limitation of Liability</h2>
+            <p>In no event shall the developer or contributors of Orbital be liable for any indirect, incidental, consequential, or special damages arising out of the use or inability to use the App, device automations, or third-party API service interruptions.</p>
+
+            <h2>4. Changes to Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. Any changes will be posted within this repository and updated on the App's policy page.</p>
+
+            <h2>5. Governing Law</h2>
+            <p>These terms shall be governed by and construed in accordance with the laws applicable to the developer's jurisdiction, without regard to conflict of law principles.</p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Orbital AI. Built with privacy and sovereign on-device control.
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const privacyTab = document.getElementById('privacy-tab');
+            const termsTab = document.getElementById('terms-tab');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            if (tabName === 'privacy') {
+                privacyTab.classList.remove('hidden');
+                termsTab.classList.add('hidden');
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                privacyTab.classList.add('hidden');
+                termsTab.classList.remove('hidden');
+                buttons[0].classList.remove('active');
+                buttons[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

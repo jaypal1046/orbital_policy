@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Orbital AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #0a0c14;
+            --bg-card: #121624;
+            --border: #232840;
+            --primary: #7c3aed;
+            --primary-light: #a78bfa;
+            --cyan: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-sub: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 36px;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 36px;
+        }
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--cyan);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin: 32px 0 14px;
+            border-left: 4px solid var(--primary-light);
+            padding-left: 12px;
+        }
+        p { color: var(--text-muted); margin-bottom: 16px; font-size: 1rem; }
+        ul { color: var(--text-muted); padding-left: 24px; margin-bottom: 18px; }
+        li { margin-bottom: 8px; }
+        strong { color: var(--text-main); }
+        a { color: var(--cyan); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .footer {
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="logo">Orbital AI</a>
+            <nav class="nav-links">
+                <a href="/privacy" class="active">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </nav>
+        </header>
+
+        <div class="content-card">
+            <span class="badge">Effective Date: September 29, 2026</span>
+            <h1>Privacy Policy</h1>
+            <p>Welcome to <strong>Orbital: Autonomous AI Mascot & Companion</strong> ("we", "our", or "the App"). We prioritize your digital sovereignty and privacy. This Privacy Policy details how data is handled when you use the Orbital mobile application.</p>
+
+            <h2>1. Zero-Telemetry & Client-Side Architecture</h2>
+            <p><strong>Orbital is architected to operate client-side on your device without central telemetry or tracking servers.</strong></p>
+            <ul>
+                <li><strong>Local Storage:</strong> All chat conversations, session logs, custom mascots, and preferences are stored exclusively in your device's local database.</li>
+                <li><strong>On-Device Key Encryption:</strong> Any third-party API keys you enter (e.g. Google AI Studio, Groq, Cerebras, OpenAI) are secured using Android's <code>EncryptedSharedPreferences</code> backed by hardware keystore security. We never have access to your API keys.</li>
+                <li><strong>No Analytics or Ads:</strong> Orbital contains zero third-party advertising SDKs and zero user-tracking analytics.</li>
+            </ul>
+
+            <h2>2. Android System Permissions</h2>
+            <p>Orbital requests specific Android permissions strictly to power direct user-requested features:</p>
+            <ul>
+                <li><strong>Microphone (Audio Recording):</strong> Used only when you tap the microphone button to speak with your companion. Voice data is processed in real time for transcription and is never stored, sold, or shared.</li>
+                <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW):</strong> Used solely to display the floating companion mascot and overlay HUD when enabled by you.</li>
+                <li><strong>Foreground Service:</strong> Used to keep the floating mascot responsive and execute background alert checks scheduled by the user via WorkManager.</li>
+                <li><strong>Network / Internet:</strong> Used solely to communicate directly between your phone and your configured AI model provider endpoint.</li>
+            </ul>
+
+            <h2>3. Third-Party AI Services</h2>
+            <p>Prompts and queries are sent directly from your device to the AI model provider you select (e.g., Google AI Studio, Groq, OpenAI). Please review the privacy terms of your chosen provider:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AI Studio Privacy Policy</a></li>
+                <li><a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">Groq Privacy Policy</a></li>
+                <li><a href="https://openai.com/privacy" target="_blank" rel="noopener">OpenAI Privacy Policy</a></li>
+            </ul>
+
+            <h2>4. User Data Sovereignty & Deletion</h2>
+            <p>You can delete all chat history or remove stored API keys at any time directly in the app. Uninstalling the app or clearing App Storage in Android Settings permanently removes all stored data from your device.</p>
+
+            <h2>5. Contact Information</h2>
+            <p>For inquiries or support regarding this Privacy Policy:</p>
+            <p><strong>Developer:</strong> Jayprakash Pal<br>
+            <strong>Website:</strong> <a href="https://orbital-lime-three.vercel.app" target="_blank">orbital-lime-three.vercel.app</a><br>
+            <strong>GitHub:</strong> <a href="https://github.com/jaypal1046/orbital_policy" target="_blank">github.com/jaypal1046/orbital_policy</a></p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Orbital AI Companion. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
