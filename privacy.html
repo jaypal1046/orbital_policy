@@ -3,157 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Orbital AI</title>
+    <title>Privacy Policy - Orbital AI Companion</title>
+    <meta name="description" content="Official Privacy Policy for Orbital: Autonomous AI Companion. Comprehensive disclosures on client-side data handling, encryption, and privacy compliance.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-base: #0a0c14;
-            --bg-card: #121624;
-            --border: #232840;
+            --bg-surface: #111524;
+            --bg-surface-elevated: #181d32;
+            --border: #232a45;
+            --border-highlight: #3b4570;
             --primary: #7c3aed;
             --primary-light: #a78bfa;
             --cyan: #38bdf8;
+            --emerald: #10b981;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --text-sub: #64748b;
+            --text-dim: #64748b;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-base);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.8;
+            padding: 0;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
         }
-        .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
-        header {
+
+        .header-wrapper {
+            border-bottom: 1px solid var(--border);
+            background: rgba(10, 12, 20, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 0;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 36px;
         }
+
         .logo {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.95rem;
-            margin-left: 20px;
             font-weight: 600;
             transition: color 0.2s;
+            padding: 6px 12px;
+            border-radius: 6px;
         }
-        .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
-        .content-card {
-            background: var(--bg-card);
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--cyan);
+            background: rgba(56, 189, 248, 0.08);
+        }
+
+        .main-container {
+            max-width: 1040px;
+            margin: 40px auto 100px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 860px) {
+            .main-container { grid-template-columns: 1fr; }
+            .toc-sidebar { display: none; }
+        }
+
+        .toc-sidebar {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+            background: var(--bg-surface);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px 36px;
+            border-radius: 12px;
+            padding: 20px;
         }
-        h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.2rem;
-            color: #ffffff;
+
+        .toc-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 12px;
         }
+
+        .toc-list {
+            list-style: none;
+            font-size: 0.88rem;
+        }
+
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+
+        .toc-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: block;
+            padding: 4px 6px;
+            border-radius: 4px;
+        }
+
+        .toc-list a:hover {
+            color: var(--text-main);
+            background: var(--bg-surface-elevated);
+        }
+
+        .content-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px 44px;
+        }
+
+        @media (max-width: 600px) {
+            .content-card { padding: 28px 20px; }
+        }
+
+        .doc-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .meta-strip {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            align-items: center;
+        }
+
         .badge {
             display: inline-block;
             background: rgba(56, 189, 248, 0.1);
             color: var(--cyan);
             border: 1px solid rgba(56, 189, 248, 0.25);
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 24px;
         }
+
+        .badge-verified {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--emerald);
+            border-color: rgba(16, 185, 129, 0.25);
+        }
+
         h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.45rem;
             color: #ffffff;
-            margin: 32px 0 14px;
-            border-left: 4px solid var(--primary-light);
-            padding-left: 12px;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
         }
-        p { color: var(--text-muted); margin-bottom: 16px; font-size: 1rem; }
-        ul { color: var(--text-muted); padding-left: 24px; margin-bottom: 18px; }
-        li { margin-bottom: 8px; }
-        strong { color: var(--text-main); }
-        a { color: var(--cyan); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .footer {
+
+        h3 {
+            font-size: 1.15rem;
+            color: var(--cyan);
+            margin: 24px 0 10px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        .callout {
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 24px 0;
+            color: var(--text-main);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-surface-elevated);
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        td {
+            color: var(--text-muted);
+        }
+
+        a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-note {
             text-align: center;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-            margin-top: 50px;
-            padding-top: 20px;
+            color: var(--text-dim);
+            font-size: 0.88rem;
+            margin-top: 60px;
+            padding-top: 24px;
             border-top: 1px solid var(--border);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo">Orbital AI</a>
+    <div class="header-wrapper">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <span>🪐</span> Orbital AI
+            </a>
             <nav class="nav-links">
                 <a href="/privacy" class="active">Privacy Policy</a>
                 <a href="/terms">Terms of Service</a>
             </nav>
-        </header>
+        </div>
+    </div>
 
-        <div class="content-card">
-            <span class="badge">Effective Date: September 29, 2026</span>
-            <h1>Privacy Policy</h1>
-            <p>Welcome to <strong>Orbital: Autonomous AI Mascot & Companion</strong> ("we", "our", or "the App"). We prioritize your digital sovereignty and privacy. This Privacy Policy details how data is handled when you use the Orbital mobile application.</p>
+    <div class="main-container">
+        <!-- Sticky Table of Contents -->
+        <aside class="toc-sidebar">
+            <div class="toc-title">Table of Contents</div>
+            <ul class="toc-list">
+                <li><a href="#overview">1. Overview & Scope</a></li>
+                <li><a href="#architecture">2. Zero-Telemetry Architecture</a></li>
+                <li><a href="#data-collection">3. Data Types & Processing</a></li>
+                <li><a href="#keystore-security">4. Keystore & API Security</a></li>
+                <li><a href="#permissions">5. Android System Permissions</a></li>
+                <li><a href="#ai-providers">6. Third-Party AI Providers</a></li>
+                <li><a href="#gdpr-ccpa">7. GDPR & CCPA Compliance</a></li>
+                <li><a href="#retention">8. Data Retention & Erasure</a></li>
+                <li><a href="#children">9. Children's Privacy</a></li>
+                <li><a href="#contact">10. Governance & Contact</a></li>
+            </ul>
+        </aside>
 
-            <h2>1. Zero-Telemetry & Client-Side Architecture</h2>
-            <p><strong>Orbital is architected to operate client-side on your device without central telemetry or tracking servers.</strong></p>
+        <!-- Main Content -->
+        <main class="content-card">
+            <div class="meta-strip">
+                <span class="badge">Version 2.0</span>
+                <span class="badge badge-verified">GDPR & CCPA Compliant</span>
+                <span class="badge">Last Updated: September 29, 2026</span>
+            </div>
+
+            <h1 class="doc-title">Privacy Policy</h1>
+            <p>This Privacy Policy applies to the <strong>Orbital: Autonomous AI Mascot & Companion</strong> mobile software application ("Application", "Service", "Orbital", "we", "us", or "our"), authored and maintained by <strong>Jayprakash Pal</strong>.</p>
+
+            <div class="callout">
+                <strong>Executive Privacy Summary:</strong> Orbital is engineered as an offline-first, client-side executive AI companion. We do not operate user telemetry servers, we do not log or commercialize your prompt histories, and your private third-party API credentials never touch any middleman server.
+            </div>
+
+            <h2 id="overview">1. Overview & Scope</h2>
+            <p>This policy details the operational privacy standards governing Orbital in compliance with global privacy frameworks, including the European Union General Data Protection Regulation (GDPR), the California Consumer Privacy Act / California Privacy Rights Act (CCPA/CPRA), and the Google Play Developer Distribution Agreement.</p>
+
+            <h2 id="architecture">2. Zero-Telemetry & Client-Side Architecture</h2>
+            <p>Unlike conventional cloud-centric AI wrappers, Orbital enforces a strict <strong>zero-telemetry, on-device data sovereignty model</strong>:</p>
             <ul>
-                <li><strong>Local Storage:</strong> All chat conversations, session logs, custom mascots, and preferences are stored exclusively in your device's local database.</li>
-                <li><strong>On-Device Key Encryption:</strong> Any third-party API keys you enter (e.g. Google AI Studio, Groq, Cerebras, OpenAI) are secured using Android's <code>EncryptedSharedPreferences</code> backed by hardware keystore security. We never have access to your API keys.</li>
-                <li><strong>No Analytics or Ads:</strong> Orbital contains zero third-party advertising SDKs and zero user-tracking analytics.</li>
+                <li><strong>No Central Database:</strong> Orbital does not maintain remote user databases or identity tracking servers.</li>
+                <li><strong>Direct Endpoint Transmission:</strong> Prompts, context histories, and assistant configurations communicate directly between your device and the AI model endpoint you configure (e.g. Google Gemini, Groq, Cerebras, OpenAI, Anthropic, or local Ollama).</li>
+                <li><strong>No Advertising SDKs:</strong> The Application contains zero commercial tracking SDKs, behavioral analytics, or third-party advertising monitors.</li>
             </ul>
 
-            <h2>2. Android System Permissions</h2>
-            <p>Orbital requests specific Android permissions strictly to power direct user-requested features:</p>
+            <h2 id="data-collection">3. Data Types & Processing Operations</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data Category</th>
+                            <th>Storage Location</th>
+                            <th>Encryption Standard</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Third-Party API Keys</strong></td>
+                            <td>On-Device Private Sandbox</td>
+                            <td>AES-256 (Android Keystore MasterKey)</td>
+                            <td>Authenticating user-configured model requests</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chat Conversations & Sessions</strong></td>
+                            <td>Local SQLite (Room Database)</td>
+                            <td>OS-level Sandboxing & File Isolation</td>
+                            <td>Displaying conversational history and session resume</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Voice & Audio Streams</strong></td>
+                            <td>RAM (Ephemeral / Non-persistent)</td>
+                            <td>Discarded immediately after transcription</td>
+                            <td>Voice input interaction with companion mascots</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Installed App Registry</strong></td>
+                            <td>Dynamic In-Memory Cache</td>
+                            <td>Not persisted remotely</td>
+                            <td>Resolving device intents (e.g. Navigation, Email, Music)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="keystore-security">4. Keystore & API Security</h2>
+            <p>When you provide custom API credentials (such as Google AI Studio, Groq Cloud, or OpenAI API keys), the keys are saved using Android's official <code>androidx.security.crypto.EncryptedSharedPreferences</code> backed by the hardware-level <strong>Android Keystore System</strong>. Keys are decrypted exclusively in memory at the exact moment of HTTP dispatch and are never logged or exported.</p>
+
+            <h2 id="permissions">5. Android System Permissions Justification</h2>
+            <p>Orbital requests minimal system permissions strictly tied to user-initiated functionality:</p>
             <ul>
-                <li><strong>Microphone (Audio Recording):</strong> Used only when you tap the microphone button to speak with your companion. Voice data is processed in real time for transcription and is never stored, sold, or shared.</li>
-                <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW):</strong> Used solely to display the floating companion mascot and overlay HUD when enabled by you.</li>
-                <li><strong>Foreground Service:</strong> Used to keep the floating mascot responsive and execute background alert checks scheduled by the user via WorkManager.</li>
-                <li><strong>Network / Internet:</strong> Used solely to communicate directly between your phone and your configured AI model provider endpoint.</li>
+                <li><strong>Microphone (<code>RECORD_AUDIO</code>):</strong> Required strictly when the user activates the microphone for real-time speech transcription. Audio streams are ephemeral and never stored on disk or shared with external analytics.</li>
+                <li><strong>Display Over Other Apps (<code>SYSTEM_ALERT_WINDOW</code>):</strong> Enables the optional floating interactive mascot companion and floating HUD chat bubble to stay visible on screen upon user request.</li>
+                <li><strong>Foreground Service (<code>FOREGROUND_SERVICE_SPECIAL_USE</code>):</strong> Ensures the interactive companion overlay remains responsive during active use and facilitates user-scheduled background monitoring tasks.</li>
+                <li><strong>Alarm & Wake Lock (<code>SET_ALARM</code> / <code>WAKE_LOCK</code>):</strong> Allows the execution of autonomous background cron monitoring and reminder notifications scheduled by the user via Android's WorkManager.</li>
+                <li><strong>Internet (<code>INTERNET</code>):</strong> Enables direct HTTPS communication with configured AI provider endpoints.</li>
             </ul>
 
-            <h2>3. Third-Party AI Services</h2>
-            <p>Prompts and queries are sent directly from your device to the AI model provider you select (e.g., Google AI Studio, Groq, OpenAI). Please review the privacy terms of your chosen provider:</p>
+            <h2 id="ai-providers">6. Third-Party AI Model Providers</h2>
+            <p>When interacting with AI models, your prompts and associated context are transmitted directly to the provider you select in the Provider Hub. We encourage users to review the privacy policies of their preferred providers:</p>
             <ul>
-                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AI Studio Privacy Policy</a></li>
-                <li><a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">Groq Privacy Policy</a></li>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AI Studio & Gemini Privacy Notice</a></li>
+                <li><a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">Groq Cloud Privacy Policy</a></li>
                 <li><a href="https://openai.com/privacy" target="_blank" rel="noopener">OpenAI Privacy Policy</a></li>
+                <li><a href="https://www.cerebras.net/privacy-policy/" target="_blank" rel="noopener">Cerebras Privacy Notice</a></li>
             </ul>
 
-            <h2>4. User Data Sovereignty & Deletion</h2>
-            <p>You can delete all chat history or remove stored API keys at any time directly in the app. Uninstalling the app or clearing App Storage in Android Settings permanently removes all stored data from your device.</p>
+            <h2 id="gdpr-ccpa">7. GDPR & CCPA/CPRA Privacy Rights</h2>
+            <p>Because all personal data resides entirely on your client device, you possess total statutory control:</p>
+            <ul>
+                <li><strong>Right to Access & Portability:</strong> All conversation data and session transcripts can be reviewed directly in the Application.</li>
+                <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> Deleting a conversation in the app or tapping "Clear Data" in Android System Settings permanently purges all local databases and cryptographic keys.</li>
+                <li><strong>No Sale or Sharing of Personal Data:</strong> We do not sell, rent, or commercialize any personal data under CCPA/CPRA regulations.</li>
+            </ul>
 
-            <h2>5. Contact Information</h2>
-            <p>For inquiries or support regarding this Privacy Policy:</p>
-            <p><strong>Developer:</strong> Jayprakash Pal<br>
-            <strong>Website:</strong> <a href="https://orbital-lime-three.vercel.app" target="_blank">orbital-lime-three.vercel.app</a><br>
-            <strong>GitHub:</strong> <a href="https://github.com/jaypal1046/orbital_policy" target="_blank">github.com/jaypal1046/orbital_policy</a></p>
-        </div>
+            <h2 id="retention">8. Data Retention & Permanent Erasure</h2>
+            <p>All data persists on-device solely for as long as you maintain the application on your hardware. Uninstalling Orbital or clearing application storage through Android Settings causes an immediate and irrecoverable deletion of all SQLite databases, encrypted preferences, and cache files.</p>
 
-        <div class="footer">
-            &copy; 2026 Orbital AI Companion. All rights reserved.
-        </div>
+            <h2 id="children">9. Children's Online Privacy Protection Act (COPPA)</h2>
+            <p>Orbital is not directed to children under the age of 13 (or under 16 in the European Economic Area). We do not knowingly solicit or collect personal information from children.</p>
+
+            <h2 id="contact">10. Governance & Contact Information</h2>
+            <p>If you have any questions, regulatory inquiries, or feedback regarding this Privacy Policy, please contact:</p>
+            <p>
+                <strong>Author / Data Controller:</strong> Jayprakash Pal<br>
+                <strong>Project Repository:</strong> <a href="https://github.com/jaypal1046/orbital_policy" target="_blank" rel="noopener">github.com/jaypal1046/orbital_policy</a><br>
+                <strong>Official Web Portal:</strong> <a href="https://orbital-lime-three.vercel.app" target="_blank" rel="noopener">orbital-lime-three.vercel.app</a>
+            </p>
+
+            <div class="footer-note">
+                &copy; 2026 Orbital AI Companion. Certified Client-Side Privacy Standards.
+            </div>
+        </main>
     </div>
 </body>
 </html>
