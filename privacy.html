@@ -347,7 +347,6 @@
                             <th>Purpose</th>
                         </tr>
                     </thead>
-                    <tbody>
                         <tr>
                             <td><strong>Third-Party API Keys</strong></td>
                             <td>On-Device Private Sandbox</td>
@@ -367,6 +366,12 @@
                             <td>Voice input interaction with companion mascots</td>
                         </tr>
                         <tr>
+                            <td><strong>On-Screen UI Accessibility Tree</strong></td>
+                            <td>RAM (Ephemeral / On-Demand)</td>
+                            <td>Processed in memory & immediately discarded</td>
+                            <td>Screen node inspection, automated testing, and smart UI interaction</td>
+                        </tr>
+                        <tr>
                             <td><strong>Installed App Registry</strong></td>
                             <td>Dynamic In-Memory Cache</td>
                             <td>Not persisted remotely</td>
@@ -376,17 +381,25 @@
                 </table>
             </div>
 
-            <h2 id="keystore-security">4. Keystore & API Security</h2>
+            <h2 id="keystore-security">4. Keystore, Cryptographic Auth & Bridge Security</h2>
             <p>When you provide custom API credentials (such as Google AI Studio, Groq Cloud, or OpenAI API keys), the keys are saved using Android's official <code>androidx.security.crypto.EncryptedSharedPreferences</code> backed by the hardware-level <strong>Android Keystore System</strong>. Keys are decrypted exclusively in memory at the exact moment of HTTP dispatch and are never logged or exported.</p>
+            <p><strong>Remote Laptop AI Bridge:</strong> Remote automation commands received from desktop IDEs (Antigravity, Claude Code, Cursor, ChatGPT MCP) require explicit local Wi-Fi / USB device authorization and 256-bit HMAC-SHA256 cryptographic session signatures. Any unsigned or unauthorized remote command is dropped immediately.</p>
 
-            <h2 id="permissions">5. Android System Permissions Justification</h2>
+            <h2 id="permissions">5. Android System Permissions Justification & Accessibility Disclosure</h2>
             <p>Orbital requests minimal system permissions strictly tied to user-initiated functionality:</p>
             <ul>
+                <li><strong>Accessibility Service (<code>BIND_ACCESSIBILITY_SERVICE</code>):</strong> Optional, user-enabled service (<code>OrbitalAccessibilityService</code>) used strictly to inspect on-screen UI node hierarchies (view IDs, text labels, bounds) and simulate user-directed taps/gestures for device automation and remote AI testing. In compliance with Google Play User Data policies:
+                    <ul>
+                        <li>Orbital does <strong>NOT</strong> collect, record, log, or transmit personal keystrokes, passwords, banking information, or payment credentials.</li>
+                        <li>All screen hierarchy parsing occurs on-device in temporary memory and is discarded immediately after action execution.</li>
+                        <li>The service is disabled by default and can be revoked at any time via Android Settings &rarr; Accessibility.</li>
+                    </ul>
+                </li>
                 <li><strong>Microphone (<code>RECORD_AUDIO</code>):</strong> Required strictly when the user activates the microphone for real-time speech transcription. Audio streams are ephemeral and never stored on disk or shared with external analytics.</li>
                 <li><strong>Display Over Other Apps (<code>SYSTEM_ALERT_WINDOW</code>):</strong> Enables the optional floating interactive mascot companion and floating HUD chat bubble to stay visible on screen upon user request.</li>
                 <li><strong>Foreground Service (<code>FOREGROUND_SERVICE_SPECIAL_USE</code>):</strong> Ensures the interactive companion overlay remains responsive during active use and facilitates user-scheduled background monitoring tasks.</li>
                 <li><strong>Alarm & Wake Lock (<code>SET_ALARM</code> / <code>WAKE_LOCK</code>):</strong> Allows the execution of autonomous background cron monitoring and reminder notifications scheduled by the user via Android's WorkManager.</li>
-                <li><strong>Internet (<code>INTERNET</code>):</strong> Enables direct HTTPS communication with configured AI provider endpoints.</li>
+                <li><strong>Internet (<code>INTERNET</code>):</strong> Enables direct HTTPS communication with configured AI provider endpoints and local bridge connections.</li>
             </ul>
 
             <h2 id="ai-providers">6. Third-Party AI Model Providers</h2>
@@ -396,6 +409,7 @@
                 <li><a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">Groq Cloud Privacy Policy</a></li>
                 <li><a href="https://openai.com/privacy" target="_blank" rel="noopener">OpenAI Privacy Policy</a></li>
                 <li><a href="https://www.cerebras.net/privacy-policy/" target="_blank" rel="noopener">Cerebras Privacy Notice</a></li>
+                <li><a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">OpenRouter Privacy Policy</a></li>
             </ul>
 
             <h2 id="gdpr-ccpa">7. GDPR & CCPA/CPRA Privacy Rights</h2>
