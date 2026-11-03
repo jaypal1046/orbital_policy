@@ -13,3 +13,8 @@ Official privacy policy and legal documentation repository for **Orbital: Autono
 - **Zero Third-Party Tracking**: No ads, no tracking SDKs, no selling of user data.
 - **Microphone**: Audio is used in real time solely for voice conversations with your companion mascot and is never saved.
 - **Floating Mascot (`SYSTEM_ALERT_WINDOW`)**: Used solely for the overlay mascot companion upon user request.
+
+## Block Blast Hero
+
+- [Privacy Policy](https://orbital-lime-three.vercel.app/block-blast-hero-privacy)
+- Android package: `com.puzzlehero.blockblast`
